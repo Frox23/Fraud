@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fraud Detection Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        form {
+            width: 300px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0 20px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter Transaction Details</h2>
+    <form method="post" action="/predict_ui/">
+        <label for="step">Step:</label>
+        <input type="number" name="step" required>
+
+        <label for="amount">Amount:</label>
+        <input type="number" step="any" name="amount" required>
+
+        <label for="gender">Gender:</label>
+        <select name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unknown">Unknown</option>
+        </select>
+
+        <label for="age_group">Age Group:</label>
+        <select name="age_group" required>
+            <option value="<= 18"><= 18</option>
+            <option value="26-35">26-35</option>
+            <option value="36-45">36-45</option>
+            <option value="46-55">46-55</option>
+            <option value="56-65">56-65</option>
+            <option value="> 65">> 65</option>
+            <option value="Unknown">Unknown</option>
+        </select>
+
+        <label for="category">Category:</label>
+        <select name="category" required>
+            <option value="es_contents">es_contents</option>
+            <option value="es_fashion">es_fashion</option>
+            <option value="es_food">es_food</option>
+            <option value="es_health">es_health</option>
+            <option value="es_home">es_home</option>
+            <option value="es_hotelservices">es_hotelservices</option>
+            <option value="es_hyper">es_hyper</option>
+            <option value="es_leisure">es_leisure</option>
+            <option value="es_otherservices">es_otherservices</option>
+            <option value="es_sportsandtoys">es_sportsandtoys</option>
+            <option value="es_tech">es_tech</option>
+            <option value="es_transportation">es_transportation</option>
+            <option value="es_travel">es_travel</option>
+            <option value="es_wellnessandbeauty">es_wellnessandbeauty</option>
+        </select>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
